@@ -1,0 +1,555 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		57BA4B377C90745B1C7990B0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3644C81407CE11206843339 /* Foundation.framework */; };
+		93909B23CA9ADFAF603CB591 /* Pods_SparkNetLogerDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33642EF0D753651D01D1AA5C /* Pods_SparkNetLogerDemo.framework */; };
+		9BEF4AFDD058C9EEC47C8D55 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8EFCB62A0BE8D097218362A1 /* InfoPlist.strings */; };
+		B752987FB67EDB5EF2740153 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3644C81407CE11206843339 /* Foundation.framework */; };
+		C36909375AB8D3EB8F2A85A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349229D7FE73D4890931D853 /* AppDelegate.swift */; };
+		D1773F71EAFD81583FE4DA56 /* Pods_SparkNetLogerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D2C92B8893636611D05C5A /* Pods_SparkNetLogerTests.framework */; };
+		F3E5655990C4E81EB87C3F75 /* SparkNetLogerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1673F89009C2DDF0E075882E /* SparkNetLogerTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0D98691010D1E8879FA9367A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A37C76C1EE842FBF2CFE976F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EA0C03CA6826AF6830E65A9C;
+			remoteInfo = SparkNetLogerDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		139A3861B3788BE6E907AA3B /* zh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = zh; path = zh.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1673F89009C2DDF0E075882E /* SparkNetLogerTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SparkNetLogerTests.swift; path = ../Tests/SparkNetLogerTests.swift; sourceTree = "<group>"; };
+		1747B26DB92E783783AA09EF /* Pods-SparkNetLogerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SparkNetLogerTests.release.xcconfig"; path = "Target Support Files/Pods-SparkNetLogerTests/Pods-SparkNetLogerTests.release.xcconfig"; sourceTree = "<group>"; };
+		33642EF0D753651D01D1AA5C /* Pods_SparkNetLogerDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SparkNetLogerDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		349229D7FE73D4890931D853 /* AppDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4A3FCC0B1A70017392591AFC /* Pods-SparkNetLogerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SparkNetLogerTests.debug.xcconfig"; path = "Target Support Files/Pods-SparkNetLogerTests/Pods-SparkNetLogerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4F1FB15DA1975B452A3615C4 /* Pods-SparkNetLogerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SparkNetLogerDemo.debug.xcconfig"; path = "Target Support Files/Pods-SparkNetLogerDemo/Pods-SparkNetLogerDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		7A0E2639EFA997D1A5319E75 /* Pods-SparkNetLogerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SparkNetLogerDemo.release.xcconfig"; path = "Target Support Files/Pods-SparkNetLogerDemo/Pods-SparkNetLogerDemo.release.xcconfig"; sourceTree = "<group>"; };
+		84D2C92B8893636611D05C5A /* Pods_SparkNetLogerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SparkNetLogerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A847D44429B43D33C85B10BC /* SparkNetLogerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SparkNetLogerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7753BAF846034AA4BBB8EBA /* en */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DB7CFA549C5173648E8BAC78 /* SparkNetLogerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SparkNetLogerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3644C81407CE11206843339 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8300EDB453DE61374765E25D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B752987FB67EDB5EF2740153 /* Foundation.framework in Frameworks */,
+				D1773F71EAFD81583FE4DA56 /* Pods_SparkNetLogerTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E09D9CB371B960B215F2827E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57BA4B377C90745B1C7990B0 /* Foundation.framework in Frameworks */,
+				93909B23CA9ADFAF603CB591 /* Pods_SparkNetLogerDemo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1F3C8DBD64B3D2E5303B4044 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ADAA244C9C63A864843F001A /* iOS */,
+				33642EF0D753651D01D1AA5C /* Pods_SparkNetLogerDemo.framework */,
+				84D2C92B8893636611D05C5A /* Pods_SparkNetLogerTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3AB320F68826EAF91736B3BC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7A0E2639EFA997D1A5319E75 /* Pods-SparkNetLogerDemo.release.xcconfig */,
+				4F1FB15DA1975B452A3615C4 /* Pods-SparkNetLogerDemo.debug.xcconfig */,
+				1747B26DB92E783783AA09EF /* Pods-SparkNetLogerTests.release.xcconfig */,
+				4A3FCC0B1A70017392591AFC /* Pods-SparkNetLogerTests.debug.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		6F61BB860968DD862CF3B057 = {
+			isa = PBXGroup;
+			children = (
+				DA3791F92BC3B9C011CBA251 /* Products */,
+				1F3C8DBD64B3D2E5303B4044 /* Frameworks */,
+				349229D7FE73D4890931D853 /* AppDelegate.swift */,
+				1673F89009C2DDF0E075882E /* SparkNetLogerTests.swift */,
+				3AB320F68826EAF91736B3BC /* Pods */,
+				8EFCB62A0BE8D097218362A1 /* InfoPlist.strings */,
+			);
+			sourceTree = "<group>";
+		};
+		ADAA244C9C63A864843F001A /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				F3644C81407CE11206843339 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		DA3791F92BC3B9C011CBA251 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A847D44429B43D33C85B10BC /* SparkNetLogerDemo.app */,
+				DB7CFA549C5173648E8BAC78 /* SparkNetLogerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E8F4309BFB3114413587E985 /* SparkNetLogerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8166C2D00FC42E472A885BAA /* Build configuration list for PBXNativeTarget "SparkNetLogerTests" */;
+			buildPhases = (
+				B855B78633D2B2DE663735C5 /* [CP] Check Pods Manifest.lock */,
+				1474BBEFEC42579AB7729D3B /* Sources */,
+				8300EDB453DE61374765E25D /* Frameworks */,
+				BD9A0218D46A613F3022115A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DDEFC483AB99C2C5177E50FB /* PBXTargetDependency */,
+			);
+			name = SparkNetLogerTests;
+			productName = SparkNetLogerTests;
+			productReference = DB7CFA549C5173648E8BAC78 /* SparkNetLogerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EA0C03CA6826AF6830E65A9C /* SparkNetLogerDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 02B9932174DBB09118AD5F87 /* Build configuration list for PBXNativeTarget "SparkNetLogerDemo" */;
+			buildPhases = (
+				B7EBCC51204DB9E4EE071BE9 /* [CP] Check Pods Manifest.lock */,
+				3BEF8FAD6B80F9339E79E47C /* Sources */,
+				E09D9CB371B960B215F2827E /* Frameworks */,
+				5044EABA7BDE51C4E9DE4EDC /* Resources */,
+				60564E2AAD604B27153A5D12 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SparkNetLogerDemo;
+			productName = SparkNetLogerDemo;
+			productReference = A847D44429B43D33C85B10BC /* SparkNetLogerDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A37C76C1EE842FBF2CFE976F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					E8F4309BFB3114413587E985 = {
+						ProvisioningStyle = Automatic;
+					};
+					EA0C03CA6826AF6830E65A9C = {
+						DevelopmentTeam = DTCHC66PTA;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = DFFF4FA1BB24AEE6846A1C9B /* Build configuration list for PBXProject "SparkNetLogerDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				zh,
+			);
+			mainGroup = 6F61BB860968DD862CF3B057;
+			productRefGroup = DA3791F92BC3B9C011CBA251 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EA0C03CA6826AF6830E65A9C /* SparkNetLogerDemo */,
+				E8F4309BFB3114413587E985 /* SparkNetLogerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5044EABA7BDE51C4E9DE4EDC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BEF4AFDD058C9EEC47C8D55 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD9A0218D46A613F3022115A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		60564E2AAD604B27153A5D12 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SparkNetLogerDemo/Pods-SparkNetLogerDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GliderLogger/Glider.framework",
+				"${BUILT_PRODUCTS_DIR}/SparkNetLoger/SparkNetLoger.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Glider.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SparkNetLoger.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SparkNetLogerDemo/Pods-SparkNetLogerDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B7EBCC51204DB9E4EE071BE9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SparkNetLogerDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B855B78633D2B2DE663735C5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SparkNetLogerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1474BBEFEC42579AB7729D3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3E5655990C4E81EB87C3F75 /* SparkNetLogerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BEF8FAD6B80F9339E79E47C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C36909375AB8D3EB8F2A85A7 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DDEFC483AB99C2C5177E50FB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SparkNetLogerDemo;
+			target = EA0C03CA6826AF6830E65A9C /* SparkNetLogerDemo */;
+			targetProxy = 0D98691010D1E8879FA9367A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8EFCB62A0BE8D097218362A1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C7753BAF846034AA4BBB8EBA /* en */,
+				139A3861B3788BE6E907AA3B /* zh */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0F6C55CB2ADB2170667BEF79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A0E2639EFA997D1A5319E75 /* Pods-SparkNetLogerDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DTCHC66PTA;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "View test logs in a browser on the same Wi-Fi network.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = local.sparknetloger.sparknetlogerdemo;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5FEE66FD499AC058199F6AF2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1747B26DB92E783783AA09EF /* Pods-SparkNetLogerTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = local.sparknetloger.sparknetlogertests;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SparkNetLogerDemo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SparkNetLogerDemo";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		76B4FFD3C9BB799596083909 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A3FCC0B1A70017392591AFC /* Pods-SparkNetLogerTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = local.sparknetloger.sparknetlogertests;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SparkNetLogerDemo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SparkNetLogerDemo";
+			};
+			name = Debug;
+		};
+		92C432E0230C535544C9115C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F1FB15DA1975B452A3615C4 /* Pods-SparkNetLogerDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DTCHC66PTA;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "View test logs in a browser on the same Wi-Fi network.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = local.sparknetloger.sparknetlogerdemo;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B1944617CDB42DA78024911F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		D4591E6EEF54699748D99E71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		02B9932174DBB09118AD5F87 /* Build configuration list for PBXNativeTarget "SparkNetLogerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0F6C55CB2ADB2170667BEF79 /* Release */,
+				92C432E0230C535544C9115C /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8166C2D00FC42E472A885BAA /* Build configuration list for PBXNativeTarget "SparkNetLogerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5FEE66FD499AC058199F6AF2 /* Release */,
+				76B4FFD3C9BB799596083909 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DFFF4FA1BB24AEE6846A1C9B /* Build configuration list for PBXProject "SparkNetLogerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B1944617CDB42DA78024911F /* Debug */,
+				D4591E6EEF54699748D99E71 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A37C76C1EE842FBF2CFE976F /* Project object */;
+}
