@@ -1,28 +1,23 @@
 PODS:
-  - GliderLogger (2.0.5)
-  - SparkNetLoger (0.1.0):
-    - GliderLogger (= 2.0.5)
+  - GliderLogger (2.0.0)
+  - SparkNetLoger (0.1.1):
+    - GliderLogger (~> 2)
 
 DEPENDENCIES:
-  - GliderLogger (from `https://github.com/immobiliare/Glider.git`, commit `c93275370925fbdb30cbe5507c6cdd2d0afe426f`)
   - SparkNetLoger (from `..`)
 
+SPEC REPOS:
+  trunk:
+    - GliderLogger
+
 EXTERNAL SOURCES:
-  GliderLogger:
-    :commit: c93275370925fbdb30cbe5507c6cdd2d0afe426f
-    :git: https://github.com/immobiliare/Glider.git
   SparkNetLoger:
     :path: ".."
 
-CHECKOUT OPTIONS:
-  GliderLogger:
-    :commit: c93275370925fbdb30cbe5507c6cdd2d0afe426f
-    :git: https://github.com/immobiliare/Glider.git
-
 SPEC CHECKSUMS:
-  GliderLogger: b3fe9dc2e508d9653ce74aa0f830cd4082183191
-  SparkNetLoger: daa1a01de0458e7954bece1431881c8af3e61b8a
+  GliderLogger: 26cf5824c68e33aaba81340b3589de9a5e7b5423
+  SparkNetLoger: 4d4cde8719c51fb76a363465550d8490d347bd33
 
-PODFILE CHECKSUM: d251f53ea64da470d852b39ec95cc0bd30a00595
+PODFILE CHECKSUM: 6a4f36c7d4ed9bec8890e949a4a26858b7e66e23
 
 COCOAPODS: 1.16.2

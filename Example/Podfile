@@ -2,8 +2,6 @@ platform :ios, '15.0'
 use_frameworks!
 
 target 'SparkNetLogerDemo' do
-  # Upstream tag 2.0.5 has a stale 2.0.3 podspec. Pin the official 2.0.5 manifest commit.
-  pod 'GliderLogger', :git => 'https://github.com/immobiliare/Glider.git', :commit => 'c93275370925fbdb30cbe5507c6cdd2d0afe426f'
   pod 'SparkNetLoger', :path => '..'
   target 'SparkNetLogerTests' do
     inherit! :search_paths

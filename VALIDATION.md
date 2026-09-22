@@ -1,5 +1,15 @@
 # 验证记录
 
+## 0.1.1 依赖更新（2026-09-22）
+
+- Podspec 改用 `GliderLogger ~> 2`，移除 Demo 和中英文接入文档中的 Git 提交覆盖。
+- `pod update GliderLogger --project-directory=Example`：仅声明 SparkNetLoger，成功从 trunk 自动解析并安装 GliderLogger 2.0.0，锁文件不再含 Glider 外部 Git 源。
+- 验证脚本改用公共源，不再注入外部 podspec；`ruby Scripts/validate_pod.rb` 独立构建验证通过。
+- Debug：14 项 XCTest 全部通过，覆盖日志数据、文件行号、本地化、HTTP 资源及端口冲突、Glider WebSocket 收发和完整 LiveService 历史与实时日志。
+- Glider 2.0.0 的 `WebSocketPeer.stop()` 仍为空，保留现有生命周期处理；没有修改上游源码。
+
+以下为初次验证记录：
+
 验证日期：2026-09-21。环境：Xcode 26.2、iOS 26.2 Simulator、Swift 5 language mode、CocoaPods 1.16.2。库和 Demo deployment target 为 iOS 15.0。
 
 ## 已通过
@@ -29,7 +39,7 @@
 
 ## 已发现并处理
 
-- 官方 Git 标签 2.0.5 的 podspec 仍声明 2.0.3，公共索引无法安装目标版本。Demo 和接入文档固定官方 `c93275370925fbdb30cbe5507c6cdd2d0afe426f` 提交，其 manifest 声明 2.0.5。
+- 官方 Git 标签 2.0.5 的 podspec 仍声明 2.0.3，公共索引无法安装目标版本。初版 Demo 和接入文档曾固定官方 `c93275370925fbdb30cbe5507c6cdd2d0afe426f` 提交，其 manifest 声明 2.0.5。
 - Glider 旧服务释放后可能由连接回调触发 unowned 引用崩溃。封装保留曾接收连接的旧服务到进程结束；停止监听与转发。修复后 Debug/Release 网络测试均无该崩溃。
 - 浏览器实测发现时间只显示毫秒，已修正为完整时分秒与毫秒并添加回归测试。
 

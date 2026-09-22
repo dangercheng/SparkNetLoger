@@ -23,7 +23,7 @@
 - 手机与电脑连接同一 Wi-Fi；查看日志时让 App 保持前台。
 
 ```sh
-git clone --branch 0.1.0 https://github.com/dangercheng/SparkNetLoger.git
+git clone --branch 0.1.1 https://github.com/dangercheng/SparkNetLoger.git
 cd SparkNetLoger/Example
 pod install
 open SparkNetLogerDemo.xcworkspace
@@ -33,17 +33,15 @@ open SparkNetLogerDemo.xcworkspace
 
 ## CocoaPods 接入
 
-通过 HTTPS 从公开 GitHub 仓库安装 **0.1.0**，无需登录 GitHub 或配置 SSH：
+通过 HTTPS 从公开 GitHub 仓库安装 **0.1.1**，无需登录 GitHub 或配置 SSH：
 
 ```ruby
 platform :ios, '15.0'
 use_frameworks!
 
 target 'YourApp' do
-  pod 'GliderLogger', :git => 'https://github.com/immobiliare/Glider.git',
-      :commit => 'c93275370925fbdb30cbe5507c6cdd2d0afe426f'
   pod 'SparkNetLoger', :git => 'https://github.com/dangercheng/SparkNetLoger.git',
-      :tag => '0.1.0'
+      :tag => '0.1.1'
 end
 ```
 
@@ -55,7 +53,7 @@ end
 pod 'SparkNetLoger', :path => '../SparkNetLoger'
 ```
 
-Demo 固定使用 manifest 声明为 2.0.5 的上游 Glider 提交；建议沿用此提交，当前验证基于该版本，未修改依赖源码。项目初次接入时，上游 2.0.5 Git 标签中的 podspec 声明了不同版本。
+GliderLogger 由 SparkNetLoger 的 `~> 2` 依赖自动安装（>= 2.0 且 < 3.0），无需单独声明。本版本使用 CocoaPods 公共源中的 2.0.0 验证。
 
 默认全局禁用日志，宿主需要在启动时显式启用：
 
@@ -142,7 +140,7 @@ App 进入后台或锁屏时暂停服务，回到前台后重新启动；IP 或�
 
 ### 已知限制
 
-Glider 2.0.5 的 `WebSocketPeer.stop()` 实现为空。为避免上游回调访问已释放对象，接收过连接的旧服务实例会保留到进程退出，反复重启可能积累实例。停止监听不保证物理连接及相关资源立即释放。
+Glider 2.0.0 的 `WebSocketPeer.stop()` 实现为空。为避免上游回调访问已释放对象，接收过连接的旧服务实例会保留到进程退出，反复重启可能积累实例。停止监听不保证物理连接及相关资源立即释放。
 
 封装未消除 Glider 内部并发风险，也不承诺慢客户端内存硬上限。日志每批最多 20 条，通常每 100ms 推送。高负载、长时间运行和生命周期行为需真机验证；模拟器回环测试不能替代手机到电脑的 Wi-Fi 验证。
 

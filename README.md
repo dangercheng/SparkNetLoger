@@ -31,7 +31,7 @@ A Swift logging library for iOS with a built-in web viewer. View live app logs f
 - Phone and computer on the same Wi-Fi. Keep the app in the foreground while viewing logs.
 
 ```sh
-git clone --branch 0.1.0 https://github.com/dangercheng/SparkNetLoger.git
+git clone --branch 0.1.1 https://github.com/dangercheng/SparkNetLoger.git
 cd SparkNetLoger/Example
 pod install
 open SparkNetLogerDemo.xcworkspace
@@ -41,17 +41,15 @@ Select your development team and device in Xcode, then run the **Debug** configu
 
 ## Integrating with CocoaPods
 
-Install version **0.1.0** directly from the public GitHub repository using HTTPS. No GitHub login or SSH configuration is required:
+Install version **0.1.1** directly from the public GitHub repository using HTTPS. No GitHub login or SSH configuration is required:
 
 ```ruby
 platform :ios, '15.0'
 use_frameworks!
 
 target 'YourApp' do
-  pod 'GliderLogger', :git => 'https://github.com/immobiliare/Glider.git',
-      :commit => 'c93275370925fbdb30cbe5507c6cdd2d0afe426f'
   pod 'SparkNetLoger', :git => 'https://github.com/dangercheng/SparkNetLoger.git',
-      :tag => '0.1.0'
+      :tag => '0.1.1'
 end
 ```
 
@@ -63,7 +61,7 @@ For local development, replace only the `SparkNetLoger` declaration with the pat
 pod 'SparkNetLoger', :path => '../SparkNetLoger'
 ```
 
-The demo pins the upstream Glider commit whose manifest declares version 2.0.5. Use the same pin: this project was validated with that revision, and its upstream dependency source has not been modified. The upstream 2.0.5 Git tag used during initial setup declared a different podspec version.
+GliderLogger is installed automatically through SparkNetLoger’s `~> 2` dependency (>= 2.0 and < 3.0); no separate declaration is needed. This release is validated with the public CocoaPods version 2.0.0.
 
 Logging is globally disabled by default. Enable it explicitly at app startup:
 
@@ -150,7 +148,7 @@ Protocol version 1 uses `historyStart`, `logs`, `historyEnd`, `closed` and `susp
 
 ### Known limitations
 
-Glider 2.0.5 has an empty `WebSocketPeer.stop()` implementation. Previously used servers are retained until process exit to avoid upstream callbacks accessing released objects, so repeated restarts can accumulate instances. Stopping listeners does not guarantee immediate physical disconnection or release of all connection resources.
+Glider 2.0.0 has an empty `WebSocketPeer.stop()` implementation. Previously used servers are retained until process exit to avoid upstream callbacks accessing released objects, so repeated restarts can accumulate instances. Stopping listeners does not guarantee immediate physical disconnection or release of all connection resources.
 
 The wrapper does not eliminate Glider's internal concurrency risks or enforce a hard slow-client memory bound. Logs are sent in batches of up to 20, normally every 100ms. Test heavy workloads, long sessions and lifecycle behavior on real devices. Simulator loopback tests do not replace phone-to-computer Wi-Fi verification.
 
