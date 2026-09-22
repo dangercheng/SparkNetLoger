@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/images/logo.png" alt="SparkNetLoger logo" width="240">
+</p>
+
 # SparkNetLoger
 
 **English** | [简体中文](README.zh-CN.md)
