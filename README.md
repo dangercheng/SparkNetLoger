@@ -21,6 +21,10 @@ A Swift logging library for iOS with a built-in web viewer. View live app logs f
 - Up to 2000 recent entries in memory, with reconnect synchronization and deduplication.
 - Preferred HTTP port **8848**. If occupied, the service selects an available port and displays a notice with the actual address.
 
+## Web viewer preview
+
+![SparkNetLoger web viewer displaying live logs, levels, tags and source locations](docs/images/web-viewer.png)
+
 ## Requirements and demo
 
 - iOS 15 or later; Swift 5 language mode; CocoaPods.
