@@ -4,7 +4,7 @@
 
 面向 iOS 的 Swift 日志库，内置网页查看器。在同一 Wi-Fi 下用浏览器查看 App 实时日志，无需连接数据线。基于 [Glider](https://github.com/immobiliare/Glider) 实现。
 
-> 本项目使用 [MIT 许可证](LICENSE)，[GitHub 仓库](https://github.com/dangercheng/SparkNetLoger) 为私有，需要访问权限。尚未发布到公共 CocoaPods 仓库。
+> 本项目使用 [MIT 许可证](LICENSE)，[GitHub 仓库](https://github.com/dangercheng/SparkNetLoger) 已公开，无需访问授权。尚未发布到公共 CocoaPods 仓库。
 
 ## 功能
 
@@ -23,7 +23,7 @@
 - 手机与电脑连接同一 Wi-Fi；查看日志时让 App 保持前台。
 
 ```sh
-git clone git@github.com:dangercheng/SparkNetLoger.git
+git clone --branch 0.1.0 https://github.com/dangercheng/SparkNetLoger.git
 cd SparkNetLoger/Example
 pod install
 open SparkNetLogerDemo.xcworkspace
@@ -33,7 +33,7 @@ open SparkNetLogerDemo.xcworkspace
 
 ## CocoaPods 接入
 
-以下示例使用本地检出目录，假设库目录与宿主 App 目录相邻，请按实际布局调整相对路径：
+通过 HTTPS 从公开 GitHub 仓库安装 **0.1.0**，无需登录 GitHub 或配置 SSH：
 
 ```ruby
 platform :ios, '15.0'
@@ -42,17 +42,18 @@ use_frameworks!
 target 'YourApp' do
   pod 'GliderLogger', :git => 'https://github.com/immobiliare/Glider.git',
       :commit => 'c93275370925fbdb30cbe5507c6cdd2d0afe426f'
-  pod 'SparkNetLoger', :path => '../SparkNetLoger'
+  pod 'SparkNetLoger', :git => 'https://github.com/dangercheng/SparkNetLoger.git',
+      :tag => '0.1.0'
 end
 ```
 
-也可将 `SparkNetLoger` 一行替换为以下内容，直接从私有仓库安装。GitHub 账号需要有访问权限，并已配置 SSH 认证：
+执行 `pod install`，并将 `Podfile.lock` 纳入版本管理。当前尚未发布到 CocoaPods trunk，请保留显式 Git 地址和标签。
+
+本地开发时，可仅将 `SparkNetLoger` 声明替换为检出目录的路径：
 
 ```ruby
-pod 'SparkNetLoger', :git => 'git@github.com:dangercheng/SparkNetLoger.git', :branch => 'main'
+pod 'SparkNetLoger', :path => '../SparkNetLoger'
 ```
-
-目前尚未发布版本标签，请保留 `Podfile.lock` 来固定实际解析的提交。
 
 Demo 固定使用 manifest 声明为 2.0.5 的上游 Glider 提交；建议沿用此提交，当前验证基于该版本，未修改依赖源码。项目初次接入时，上游 2.0.5 Git 标签中的 podspec 声明了不同版本。
 

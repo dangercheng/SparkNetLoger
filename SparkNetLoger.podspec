@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.summary = 'iOS LAN live logging, powered by Glider.'
   s.description = 'Swift logging facade, persistent live switch, embedded HTTP viewer and native Glider WebSocket transport.'
   s.homepage = 'https://github.com/dangercheng/SparkNetLoger'
-  s.source = { :git => 'https://github.com/dangercheng/SparkNetLoger.git', :branch => 'main' }
+  s.source = { :git => 'https://github.com/dangercheng/SparkNetLoger.git', :tag => s.version.to_s }
   s.author = 'chengdengjian'
   s.license = { :type => 'MIT', :file => 'LICENSE' }
   s.ios.deployment_target = '15.0'

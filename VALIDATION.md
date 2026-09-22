@@ -35,7 +35,7 @@
 
 ## 已知警告和限制
 
-- 初次验证使用的 example.invalid 仓库占位地址现已替换为 https://github.com/dangercheng/SparkNetLoger；仓库为私有，许可证为 MIT。
+- 初次验证使用的 example.invalid 仓库占位地址现已替换为 https://github.com/dangercheng/SparkNetLoger；仓库现已公开，许可证为 MIT。
 - Glider 在当前工具链下产生旧 deployment target、Sendable 和扩展协议一致性等警告；未修改依赖源码。
 - 原生 WebSocket 的 stop() 不完整，旧服务实例会积累；不承诺连接物理即时释放、慢连接内存硬上限或消除 Glider 内部线程竞态。
 - 浏览器样例测试验证前端；loopback 测试验证网络链路。它们均不替代实体手机、Wi-Fi 和系统生命周期验收。
