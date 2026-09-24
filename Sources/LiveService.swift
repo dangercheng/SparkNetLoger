@@ -5,6 +5,7 @@ import Glider
 import Darwin
 
 public struct SparkNetLogerState {
+    /// `paused` is retained for source compatibility; backgrounding no longer emits it.
     public enum Phase: String { case disabled, off, waitingForWiFi, starting, running, paused, failed }
     public let phase: Phase
     public let enabled: Bool
@@ -26,7 +27,6 @@ internal final class LiveService: NSObject {
     private let addressProvider: (NWPath) -> String?
     private var enabled = false
     private var requested: Bool
-    private var foreground = true
     private var monitor: NWPathMonitor?
     private var path: NWPath?
     private var address: String?
@@ -54,8 +54,6 @@ internal final class LiveService: NSObject {
         state = SparkNetLogerState(phase: .disabled, enabled: false,
             liveLoggingRequested: requested, webURL: nil, connectionCount: 0, errorMessage: nil, noticeMessage: nil)
         super.init()
-        foreground = UIApplication.shared.applicationState != .background
-        NotificationCenter.default.addObserver(self, selector: #selector(background), name: UIApplication.didEnterBackgroundNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(active), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     func configure(_ value: Bool) {
@@ -85,13 +83,12 @@ internal final class LiveService: NSObject {
         }
         monitor.start(queue: .main)
     }
-    @objc private func background() { foreground = false; reconcile() }
-    @objc private func active() { foreground = true; reconcile() }
+    // Recheck network/service failures on return without replacing healthy connections.
+    @objc private func active() { reconcile() }
 
     private func reconcile() {
         guard enabled else { publish(.disabled); return }
         guard requested else { publish(.off); return }
-        guard foreground else { shutdown(permanent: false); publish(.paused); return }
         guard let path = path, path.status == .satisfied,
               let host = addressProvider(path) else {
             shutdown(permanent: false); publish(.waitingForWiFi); return

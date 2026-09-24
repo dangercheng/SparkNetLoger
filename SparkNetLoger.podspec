@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'SparkNetLoger'
-  s.version = '0.1.1'
+  s.version = '0.1.2'
   s.summary = 'iOS LAN live logging, powered by Glider.'
   s.description = 'Swift logging facade, persistent live switch, embedded HTTP viewer and native Glider WebSocket transport.'
   s.homepage = 'https://github.com/dangercheng/SparkNetLoger'

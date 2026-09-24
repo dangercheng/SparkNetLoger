@@ -28,10 +28,10 @@ A Swift logging library for iOS with a built-in web viewer. View live app logs f
 ## Requirements and demo
 
 - iOS 15 or later; Swift 5 language mode; CocoaPods.
-- Phone and computer on the same Wi-Fi. Keep the app in the foreground while viewing logs.
+- Phone and computer on the same Wi-Fi. For uninterrupted log delivery, keep the app in the foreground.
 
 ```sh
-git clone --branch 0.1.1 https://github.com/dangercheng/SparkNetLoger.git
+git clone --branch 0.1.2 https://github.com/dangercheng/SparkNetLoger.git
 cd SparkNetLoger/Example
 pod install
 open SparkNetLogerDemo.xcworkspace
@@ -41,7 +41,7 @@ Select your development team and device in Xcode, then run the **Debug** configu
 
 ## Integrating with CocoaPods
 
-Install version **0.1.1** directly from the public GitHub repository using HTTPS. No GitHub login or SSH configuration is required:
+Install version **0.1.2** directly from the public GitHub repository using HTTPS. No GitHub login or SSH configuration is required:
 
 ```ruby
 platform :ios, '15.0'
@@ -49,7 +49,7 @@ use_frameworks!
 
 target 'YourApp' do
   pod 'SparkNetLoger', :git => 'https://github.com/dangercheng/SparkNetLoger.git',
-      :tag => '0.1.1'
+      :tag => '0.1.2'
 end
 ```
 
@@ -124,7 +124,7 @@ observation = SparkNetLoger.observeState { state in
 }
 ```
 
-Phases distinguish disabled, off, waiting for Wi-Fi, starting, running, background-paused and failed. `noticeMessage` reports nonfatal events such as port changes; `errorMessage` reports failures. The switch preference is saved in `UserDefaults`, initially off. Background suspension and connection failures do not change it. History is cleared when live logging is explicitly stopped, the library is disabled, or the process exits.
+Phases distinguish disabled, off, waiting for Wi-Fi, starting, running and failed. The legacy `paused` case remains for source compatibility but is no longer emitted on background entry. `noticeMessage` reports nonfatal events such as port changes; `errorMessage` reports failures. The switch preference is saved in `UserDefaults`, initially off. Background suspension and connection failures do not change it. History is cleared when live logging is explicitly stopped, the library is disabled, or the process exits.
 
 Service control is dispatched to the main thread. State queries synchronously return a main-thread snapshot, so do not block the main thread while waiting for another thread to query state. Releasing the observation token or calling `cancel()` ends observation.
 
@@ -140,7 +140,7 @@ Use the address shown in the app, usually `http://PHONE_IP:8848/`. Each startup 
 
 The service listens on Wi-Fi only. It uses no cloud service, Bonjour discovery or LAN scanning. All web resources are packaged with the Pod. HTTP accepts only GET requests for fixed resources, not arbitrary local files. The viewer is intended for trusted development networks; it does not provide authentication or TLS.
 
-Entering the background or locking the phone pauses the service. Returning to the foreground restarts it; use the displayed address if the IP or port changed. Browsers reconnect after 1, 2, 4, 8 and then 10 seconds; explicitly stopping live logging ends retries.
+Entering the background or locking the phone does not explicitly stop the HTTP service or disconnect WebSocket clients. iOS may still suspend or terminate the app, so continuous background delivery is not guaranteed. Returning to the foreground rechecks service availability and restarts it if needed, preserving healthy connections; use the displayed address if the IP or port changed. Browsers reconnect after 1, 2, 4, 8 and then 10 seconds; explicitly stopping live logging ends retries.
 
 Level/tag selections are OR within each group and AND across groups. Search is case-insensitive. Formatted entries expand to show context. Plain-text entries include time, level, tag, source location, message and nonempty context. **Copy all** copies the current filtered results. **Clear logs** affects only the current browser, not the phone's history. Pausing auto-scroll does not pause reception; **Scroll to bottom** does not change the auto-scroll switch.
 

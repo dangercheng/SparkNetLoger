@@ -1,6 +1,6 @@
 PODS:
   - GliderLogger (2.0.0)
-  - SparkNetLoger (0.1.1):
+  - SparkNetLoger (0.1.2):
     - GliderLogger (~> 2)
 
 DEPENDENCIES:
@@ -16,7 +16,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   GliderLogger: 26cf5824c68e33aaba81340b3589de9a5e7b5423
-  SparkNetLoger: 4d4cde8719c51fb76a363465550d8490d347bd33
+  SparkNetLoger: fde063118bb91b62d4da4b523d468569900be8d4
 
 PODFILE CHECKSUM: 6a4f36c7d4ed9bec8890e949a4a26858b7e66e23
 

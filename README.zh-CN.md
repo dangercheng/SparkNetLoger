@@ -23,7 +23,7 @@
 - 手机与电脑连接同一 Wi-Fi；查看日志时让 App 保持前台。
 
 ```sh
-git clone --branch 0.1.1 https://github.com/dangercheng/SparkNetLoger.git
+git clone --branch 0.1.2 https://github.com/dangercheng/SparkNetLoger.git
 cd SparkNetLoger/Example
 pod install
 open SparkNetLogerDemo.xcworkspace
@@ -33,7 +33,7 @@ open SparkNetLogerDemo.xcworkspace
 
 ## CocoaPods 接入
 
-通过 HTTPS 从公开 GitHub 仓库安装 **0.1.1**，无需登录 GitHub 或配置 SSH：
+通过 HTTPS 从公开 GitHub 仓库安装 **0.1.2**，无需登录 GitHub 或配置 SSH：
 
 ```ruby
 platform :ios, '15.0'
@@ -41,7 +41,7 @@ use_frameworks!
 
 target 'YourApp' do
   pod 'SparkNetLoger', :git => 'https://github.com/dangercheng/SparkNetLoger.git',
-      :tag => '0.1.1'
+      :tag => '0.1.2'
 end
 ```
 
@@ -116,7 +116,7 @@ observation = SparkNetLoger.observeState { state in
 }
 ```
 
-状态区分全局禁用、关闭、等待 Wi-Fi、启动中、运行中、后台暂停和失败。`noticeMessage` 提供端口切换等非致命提示，`errorMessage` 提供错误。实时开关初始关闭，选择保存在 `UserDefaults`；后台暂停和网络错误不改变选择。主动关闭实时日志、全局禁用或进程退出会清空历史。
+状态区分全局禁用、关闭、等待 Wi-Fi、启动中、运行中和失败。旧的 `paused` 状态保留以兼容现有代码，退后台不再触发。`noticeMessage` 提供端口切换等非致命提示，`errorMessage` 提供错误。实时开关初始关闭，选择保存在 `UserDefaults`；退后台和网络错误不改变选择。主动关闭实时日志、全局禁用或进程退出会清空历史。
 
 服务控制会派发到主线程，状态查询同步返回主线程快照。不要在主线程阻塞等待另一个正在查询状态的线程。释放观察 token 或调用 `cancel()` 可停止观察。
 
@@ -132,7 +132,7 @@ observation = SparkNetLoger.observeState { state in
 
 服务仅监听 Wi-Fi，不使用云服务、Bonjour 或局域网扫描。网页资源随 Pod 打包，HTTP 只接受固定资源的 GET 请求，不开放任意本地文件。查看器面向可信开发网络，未提供身份认证或 TLS。
 
-App 进入后台或锁屏时暂停服务，回到前台后重新启动；IP 或端口变化时请使用新地址。浏览器断线后按 1、2、4、8、10 秒间隔重试，主动关闭实时日志后停止重试。
+App 进入后台或锁屏时不会主动停止 HTTP 服务或断开 WebSocket 连接。iOS 仍可能挂起或终止 App，因此无法保证后台持续传输日志。回到前台会重新检查服务，必要时恢复，正常连接保持不变；IP 或端口变化时请使用新地址。浏览器断线后按 1、2、4、8、10 秒间隔重试，主动关闭实时日志后停止重试。
 
 等级与 Tag 同组内取或、不同组之间取且，搜索不区分大小写。格式化日志可展开 context；纯文本包含时间、等级、Tag、文件行号、正文和非空 context。「复制全部」复制当前筛选结果。「清空日志」仅影响当前浏览器，不清空手机历史。暂停自动滚动不暂停接收，「滚动到底部」不会改变自动滚动开关。
 

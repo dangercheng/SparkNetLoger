@@ -1,6 +1,7 @@
 import XCTest
 import Glider
 import Network
+import UIKit
 @testable import SparkNetLoger
 
 final class SparkNetLogerTests: XCTestCase {
@@ -64,10 +65,33 @@ final class SparkNetLogerTests: XCTestCase {
         }
         client.resume(); receive()
         wait(for: [history], timeout: 5); XCTAssertTrue(sawHistory)
+        let backgroundHTTP = expectation(description: "HTTP remains available after background notification")
         DispatchQueue.main.async {
+            NotificationCenter.default.post(name: UIApplication.didEnterBackgroundNotification, object: nil)
+            XCTAssertEqual(service.state.phase, .running)
+            XCTAssertEqual(service.state.webURL, url)
+            XCTAssertEqual(service.state.connectionCount, 1)
             service.record(LogRecord(level: .debug, tag: "Live", message: "after-connect", context: ["ok": true]).object)
+            URLSession.shared.dataTask(with: url.appendingPathComponent("config.json")) { data, response, error in
+                XCTAssertNil(error)
+                XCTAssertEqual((response as? HTTPURLResponse)?.statusCode, 200)
+                let config = data.flatMap { try? JSONSerialization.jsonObject(with: $0) as? [String: Any] }
+                XCTAssertEqual(config?["webSocketPort"] as? Int, socketPort)
+                backgroundHTTP.fulfill()
+            }.resume()
         }
-        wait(for: [live], timeout: 5)
+        // The existing client must receive the live log without reconnecting.
+        // Synthetic lifecycle notifications do not simulate OS process suspension.
+        wait(for: [live, backgroundHTTP], timeout: 5)
+        let foreground = expectation(description: "foreground preserves connection")
+        DispatchQueue.main.async {
+            NotificationCenter.default.post(name: UIApplication.willEnterForegroundNotification, object: nil)
+            XCTAssertEqual(service.state.phase, .running)
+            XCTAssertEqual(service.state.webURL, url)
+            XCTAssertEqual(service.state.connectionCount, 1)
+            foreground.fulfill()
+        }
+        wait(for: [foreground], timeout: 2)
         DispatchQueue.main.async { service.setRequested(false) }
         wait(for: [closed], timeout: 5)
         client.cancel(with: .normalClosure, reason: nil)
